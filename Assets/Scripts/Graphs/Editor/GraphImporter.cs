@@ -42,14 +42,17 @@ public class GraphImporter : ScriptedImporter
             case TextNode textNode:
                 runtimeNodes.Add(new TextRuntimeNode
                 {
-                    text = GetInputPortValue<string>(textNode.GetInputPortByName(TextNode.INPUT_PORT_TEXT))
+                    text = GetInputPortValue<string>(textNode.GetInputPortByName(TextNode.INPUT_PORT_TEXT)),
+                    waitTime = GetInputPortValue<int>(textNode.GetInputPortByName(TextNode.INPUT_PORT_WAIT_TIME))
+
                 });
                 break;
 
             case NumberNode numberNode:
                 runtimeNodes.Add(new NumberRuntimeNode
                 {
-                    number = GetInputPortValue<float>(numberNode.GetInputPortByName(NumberNode.INPUT_PORT_NUMBER))
+                    number = GetInputPortValue<float>(numberNode.GetInputPortByName(NumberNode.INPUT_PORT_NUMBER)),
+                    waitTime = GetInputPortValue<int>(numberNode.GetInputPortByName(NumberNode.INPUT_PORT_WAIT_TIME))
                 });
                 break;
 

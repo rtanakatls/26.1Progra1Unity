@@ -5,4 +5,5 @@ using UnityEngine;
 public class NumberRuntimeNode : GenericRuntimeNode
 {
     public float number;
+    public int waitTime;
 }
